@@ -5,7 +5,7 @@ version: 0.2.19.{build}
 platform: 
   - x64
 
-os: Visual Studio 2017
+image: Visual Studio 2019
 
 configuration: Release
 
@@ -35,12 +35,13 @@ environment:
       DYNAMIC_ARCH: ON
       WITH_FORTRAN: no
     - COMPILER: cl
-    - COMPILER: MinGW64-gcc-7.2.0-mingw
+    - image: Visual Studio 2017
+      COMPILER: MinGW64-gcc-7.2.0-mingw
       DYNAMIC_ARCH: OFF
       WITH_FORTRAN: ignore
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    - image: Visual Studio 2015
       COMPILER: MinGW-gcc-6.3.0-32   
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    - image: Visual Studio 2015
       COMPILER: MinGW-gcc-5.3.0
       WITH_FORTRAN: ignore
     
